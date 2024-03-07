@@ -118,7 +118,7 @@ public sealed class Shares<TNumber> : ICollection<FinitePoint<TNumber>>, ICollec
     public static implicit operator Shares<TNumber>(string s)
     {
         var points = s
-            .Split(new[] {Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries)
+            .Split([Environment.NewLine], StringSplitOptions.RemoveEmptyEntries)
             .Select(line => new FinitePoint<TNumber>(line))
             .ToArray();
         return new Shares<TNumber>(points);
